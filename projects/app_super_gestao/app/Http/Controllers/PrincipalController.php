@@ -9,4 +9,8 @@ class PrincipalController extends Controller
   public function principal(){
     echo "Welcome!";
   }
+
+  public function VistaPrincipal(){
+    return view('site.principal');
+  }
 }
