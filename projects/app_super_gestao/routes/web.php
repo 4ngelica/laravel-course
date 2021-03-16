@@ -30,3 +30,13 @@ Route::get('/vista-contato/{nome}/{categoria}/{assunto}/{mensagem}',
     echo "Rota com parâmetro: $nome - $categoria - $assunto - $mensagem";
   }
 );
+
+//Definindo rotas com parâmetros opcionais
+Route::get('/vista-sobre-nos/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
+  function( string $nome = 'Nome não informado',
+            string $categoria = 'Categoria não informada',
+            string $assunto = 'Assunto não informado',
+            string $mensagem = 'Mensagem não informada') {
+    echo "Rota com parâmetro: $nome - $categoria - $assunto - $mensagem";
+  }
+);
