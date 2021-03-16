@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class PrincipalController extends Controller
 {
-  public function principal(){
+  public function VistaPrincipal(){
     echo "Welcome!";
   }
 
-  public function VistaPrincipal(){
+  public function principal(){
     return view('site.principal');
   }
 }

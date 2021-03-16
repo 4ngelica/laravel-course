@@ -15,14 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 
 //Definindo rotas (que apontam para vistas ou apenas para msgs de callback)
-Route::get('/', 'PrincipalController@principal');
-Route::get('/vista-principal', 'PrincipalController@vistaPrincipal');
+  //Vistas
+  Route::get('/', 'PrincipalController@principal')->name("site.index");
+  Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name("site.sobrenos");
+  Route::get('/contato', 'ContatoController@contato')->name("site.contato");
+  Route::get('/login', function(){return "Login";})->name("site.login");
 
-Route::get('/sobre-nos', 'SobreNosController@sobreNos');
-Route::get('/vista-sobre-nos', 'SobreNosController@vistaSobreNos');
+    //Agrupando e nomeando rotas
+    Route::prefix('/app')->group(function(){
+      Route::get('/clientes', function(){return "Clientes";})->name("app.clientes");
+      Route::get('/fornecedores',function(){return "Fornecedores";})->name("app.fornecedores");
+      Route::get('/produtos',function(){return "Produtos";})->name("app.produtos");
+  });
 
-Route::get('/contato', 'ContatoController@contato');
-Route::get('/vista-contato', 'ContatoController@vistaContato');
+  //Msgs de callback
+  Route::get('/callback-principal', 'PrincipalController@callbackPrincipal');
+  Route::get('/callback-sobre-nos', 'SobreNosController@callbackSobreNos');
+  Route::get('/callback-contato', 'ContatoController@callbackContato');
+
 
 //Definindo rota com parâmetros
 Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem}',
@@ -32,7 +42,7 @@ Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem}',
 );
 
 //Definindo rota com parâmetros opcionais
-Route::get('/sobre-nos/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
+Route::get('/callback-sobre-nos/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
   function( string $nome = 'Nome não informado',
             string $categoria = 'Categoria não informada',
             string $assunto = 'Assunto não informado',
@@ -42,7 +52,7 @@ Route::get('/sobre-nos/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
 );
 
 //Tratando parâmetros de rota com regex
-Route::get('/vista-contato/{nome?}/{categoria_id?}',
+Route::get('/callback-contato/{nome?}/{categoria_id?}',
   function( string $nome = 'Nome não informado',
             int $categoria_id = 0) {
 
