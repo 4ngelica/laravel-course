@@ -59,3 +59,14 @@ Route::get('/callback-contato/{nome?}/{categoria_id?}',
     echo "Rota com parâmetro: $nome - $categoria_id";
   }
 )->where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
+
+//Redirecionando rotas
+Route::get('/rota1',function(){echo "Rota1";})->name("site.rota1");
+Route::get('/rota2',function(){return redirect()->route("site.rota1");})->name("site.rota2");
+
+//ou: Route::redirect('/rota2','/rota1')
+
+//Rota de fallback (redirecionar ao acessar uma rota inexistente)
+Route::fallback(function() {
+  echo "A rota acessada não existe. <a href=" . route('site.index') ."> Clique aqui</a> para voltar para a página principal.";
+});
