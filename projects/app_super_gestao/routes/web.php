@@ -70,3 +70,6 @@ Route::get('/rota2',function(){return redirect()->route("site.rota1");})->name("
 Route::fallback(function() {
   echo "A rota acessada não existe. <a href=" . route('site.index') ."> Clique aqui</a> para voltar para a página principal.";
 });
+
+//Encaminhando parâmetros de rota para o controlador
+Route::get('/teste/{p1}/{p2}','TesteController@teste')->name('teste');
