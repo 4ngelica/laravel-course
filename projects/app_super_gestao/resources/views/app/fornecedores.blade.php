@@ -12,3 +12,16 @@
 @else
 <h3>Ainda não existem fornecedores.</h3>
 @endif
+
+{{-- Unless -> executa se houver negação da condição --}}
+Status do fornecedor:
+@unless($fornecedores2[0]['status'] == 'S')
+  Fornecedor inativo.
+@endunless
+
+<br>
+
+{{-- Isset -> verifica se uma variável existe --}}
+@isset($fornecedores2[0]['nome'])
+  O nome do fornecedor é: {{$fornecedores2[0]['nome']}}.
+@endisset
