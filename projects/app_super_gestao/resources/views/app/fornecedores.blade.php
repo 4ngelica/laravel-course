@@ -18,13 +18,9 @@ Status do fornecedor:
 @unless($fornecedores2[0]['status'] == 'S')
   Fornecedor inativo.
 @endunless
-<<<<<<< HEAD
 
 <br>
-
 {{-- Isset -> verifica se uma variável existe --}}
 @isset($fornecedores2[0]['nome'])
   O nome do fornecedor é: {{$fornecedores2[0]['nome']}}.
 @endisset
-=======
->>>>>>> def5a0f69c7860d46d2a6db3dd11d8ce6967ac64
