@@ -24,3 +24,9 @@ Status do fornecedor:
 @isset($fornecedores2[0]['nome'])
   O nome do fornecedor é: {{$fornecedores2[0]['nome']}}.
 @endisset
+<br>
+
+{{-- Isset -> verifica se o valor é vazio (null, false, 0, 0.0, '' etc ) --}}
+@empty ($fornecedores[1]['cnpj'])
+Esse cnpj é nulo.
+@endempty
