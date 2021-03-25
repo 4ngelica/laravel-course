@@ -36,3 +36,16 @@ Esse cnpj é nulo.
 @isset($fornecedores2)
   O CNPJ é: {{$fornecedores2[1]['cnpj'] ?? 'Valor padrão'}}.
 @endisset
+<br>
+
+{{-- Switch/case: Realiza ações dependendo do caso e tb pode ter um valor default --}}
+@switch($fornecedores2[1]['ddd'])
+  @case('11')
+  Esse é o DDD da cidade de São Paulo ({{$fornecedores2[1]['ddd']}})
+  @break
+  @case('85')
+  Esse é o DDD da cidade de Fortaleza ({{$fornecedores2[1]['ddd']}})
+  @break
+  @default
+  Cidade não identificada!
+@endswitch
