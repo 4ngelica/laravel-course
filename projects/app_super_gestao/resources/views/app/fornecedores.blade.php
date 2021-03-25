@@ -49,3 +49,22 @@ Esse cnpj é nulo.
   @default
   Cidade não identificada!
 @endswitch
+<hr>
+
+{{-- For --}}
+@for($i = 0; $i < 10; $i++)
+  {{$i}}<br>
+@endfor
+
+@isset($fornecedores3)
+  @for($i = 0; isset($fornecedores3[$i]); $i++)
+    Fornecedor: {{ $fornecedores3[$i]['nome'] }}
+    <br>
+    Status: {{ $fornecedores3[$i]['status'] }}
+    <br>
+    CNPJ: {{ $fornecedores3[$i]['cnpj'] }}
+    <br>
+    DDD: ({{ $fornecedores3[$i]['ddd'] }})
+    <hr>
+  @endfor
+@endisset
