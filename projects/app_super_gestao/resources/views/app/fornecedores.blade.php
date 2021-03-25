@@ -26,7 +26,13 @@ Status do fornecedor:
 @endisset
 <br>
 
-{{-- Isset -> verifica se o valor é vazio (null, false, 0, 0.0, '' etc ) --}}
+{{-- Empty -> verifica se o valor é vazio (null, false, 0, 0.0, '' etc ) --}}
 @empty ($fornecedores[1]['cnpj'])
 Esse cnpj é nulo.
 @endempty
+<br>
+
+{{-- Operador default (??): Verifica se a variavel informada tem um valor, senão atribui um valor default --}}
+@isset($fornecedores2)
+  O CNPJ é: {{$fornecedores2[1]['cnpj'] ?? 'Valor padrão'}}.
+@endisset

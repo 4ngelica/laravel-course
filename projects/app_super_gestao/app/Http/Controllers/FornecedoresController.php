@@ -13,12 +13,13 @@ class FornecedoresController extends Controller
 
       $fornecedores2 = [
         0 => ['nome' => 'Fornecedor 1', 'status' => 'N'],
-        1 => ['nome' => 'Fornecedor 2', 'status' => 'S', 'cnpj' => '']
+        1 => ['nome' => 'Fornecedor 2', 'status' => 'S', 'cnpj' => NULL]
       ];
 
       //Operador ternário
       echo isset($fornecedores2[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ inexistente';
-
       return view('app.fornecedores', compact('fornecedores'), compact('fornecedores2'));
+
+
     }
 }
