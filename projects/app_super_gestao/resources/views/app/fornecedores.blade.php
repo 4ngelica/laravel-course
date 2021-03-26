@@ -125,3 +125,30 @@ Esse cnpj é nulo.
       Não existem fornecedores cadastrados
   @endforelse
 @endisset
+<br>
+
+{{-- Estudo da variável loop gerada no foreach e forelse e impressão literal dentro da blade --}}
+<h3>Estudo da variável loop:</h3>
+@isset($fornecedores3)
+  @forelse($fornecedores3 as $indice => $fornecedor)
+    Iteração atual: {{ $loop->iteration}}
+    <br>
+    Fornecedor: @{{ $fornecedor['nome'] }}: Impressão da variável literal
+    <br>
+    Status: {{ $fornecedor['status'] }}
+    <br>
+    CNPJ: {{ $fornecedor['cnpj'] }}
+    <br>
+    DDD: ({{ $fornecedor['ddd'] }})
+    <br>
+    @if ($loop->first)
+      Primeira iteração!
+    @endif
+    @if ($loop->last)
+      Última iteração!
+    @endif
+    <hr>
+    @empty
+      Não existem fornecedores cadastrados
+  @endforelse
+@endisset
