@@ -24,7 +24,7 @@ class FornecedoresController extends Controller
 
       //Operador ternário
       echo isset($fornecedores2[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ inexistente';
-      return view('app.fornecedores', compact('fornecedores'), compact('fornecedores2'), compact('fornecedores3'));
+      return view('app.fornecedores', compact('fornecedores','fornecedores2', 'fornecedores3'));
 
     }
 }

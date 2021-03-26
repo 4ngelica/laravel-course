@@ -56,6 +56,7 @@ Esse cnpj é nulo.
   {{$i}}<br>
 @endfor
 
+<h3>Loop for:</h3>
 @isset($fornecedores3)
   @for($i = 0; isset($fornecedores3[$i]); $i++)
     Fornecedor: {{ $fornecedores3[$i]['nome'] }}
@@ -67,4 +68,27 @@ Esse cnpj é nulo.
     DDD: ({{ $fornecedores3[$i]['ddd'] }})
     <hr>
   @endfor
+@endisset
+<br>
+
+{{-- While --}}
+@php
+  $i=0
+@endphp
+
+<h3>Loop while:</h3>
+@isset($fornecedores3)
+  @while(isset($fornecedores3[$i]))
+    Fornecedor: {{ $fornecedores3[$i]['nome'] }}
+    <br>
+    Status: {{ $fornecedores3[$i]['status'] }}
+    <br>
+    CNPJ: {{ $fornecedores3[$i]['cnpj'] }}
+    <br>
+    DDD: ({{ $fornecedores3[$i]['ddd'] }})
+    <hr>
+      @php
+        $i++
+      @endphp
+  @endwhile
 @endisset
