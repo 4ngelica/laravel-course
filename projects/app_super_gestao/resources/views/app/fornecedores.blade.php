@@ -108,3 +108,20 @@ Esse cnpj é nulo.
     <hr>
   @endforeach
 @endisset
+
+{{-- Forelse: Executa o loop ao verificar que o array não está vazio, caso contrário desvia o fluxo --}}
+<h3>Loop forelse:</h3>
+@isset($fornecedores4)
+  @forelse($fornecedores4 as $indice => $fornecedor)
+    Fornecedor: {{ $fornecedor['nome'] }}
+    <br>
+    Status: {{ $fornecedor['status'] }}
+    <br>
+    CNPJ: {{ $fornecedor['cnpj'] }}
+    <br>
+    DDD: ({{ $fornecedor['ddd'] }})
+    <hr>
+    @empty
+      Não existem fornecedores cadastrados
+  @endforelse
+@endisset

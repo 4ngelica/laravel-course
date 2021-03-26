@@ -22,9 +22,11 @@ class FornecedoresController extends Controller
         2 => ['nome' => 'Fornecedor 3', 'status' => 'S', 'cnpj' => '22763423692831', 'ddd' => '55']
       ];
 
+      $fornecedores4 = [];
+
       //Operador ternário
       echo isset($fornecedores2[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ inexistente';
-      return view('app.fornecedores', compact('fornecedores','fornecedores2', 'fornecedores3'));
+      return view('app.fornecedores', compact('fornecedores','fornecedores2', 'fornecedores3', 'fornecedores4'));
 
     }
 }
