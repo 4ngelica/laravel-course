@@ -92,3 +92,19 @@ Esse cnpj é nulo.
       @endphp
   @endwhile
 @endisset
+<br>
+
+{{-- Foreach --}}
+<h3>Loop foreach:</h3>
+@isset($fornecedores3)
+  @foreach($fornecedores3 as $indice => $fornecedor)
+    Fornecedor: {{ $fornecedor['nome'] }}
+    <br>
+    Status: {{ $fornecedor['status'] }}
+    <br>
+    CNPJ: {{ $fornecedor['cnpj'] }}
+    <br>
+    DDD: ({{ $fornecedor['ddd'] }})
+    <hr>
+  @endforeach
+@endisset
