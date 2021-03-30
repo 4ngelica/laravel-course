@@ -11,12 +11,13 @@
 
             <div class="informacao-pagina">
                 <div class="contato-principal">
-                    <form>
-                        <input type="text" placeholder="Nome" class="borda-preta">
+                    <form action="{{ route('site.contato')}}" method="post">
+                      @csrf
+                        <input name="nome" type="text" placeholder="Nome" class="borda-preta">
                         <br>
-                        <input type="text" placeholder="Telefone" class="borda-preta">
+                        <input name="telefone" type="text" placeholder="Telefone" class="borda-preta">
                         <br>
-                        <input type="text" placeholder="E-mail" class="borda-preta">
+                        <input name="email" type="text" placeholder="E-mail" class="borda-preta">
                         <br>
                         <select class="borda-preta">
                             <option value="">Qual o motivo do contato?</option>
