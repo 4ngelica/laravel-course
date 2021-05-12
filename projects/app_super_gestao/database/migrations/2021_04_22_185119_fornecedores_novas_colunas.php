@@ -16,6 +16,7 @@ class FornecedoresNovasColunas extends Migration
       Schema::table('fornecedores', function (Blueprint $table) {
           //Adiciona colunas
           $table->string('uf', 2);
+          $table->string('nome', 2);
           $table->string('email', 150);
       });
     }
