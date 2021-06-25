@@ -28,6 +28,9 @@ class ContatoController extends Controller
         'email' => 'required|email',
         'motivo_contatos_id' => 'required',
         'mensagem' => 'required'
+      ],
+      [
+        'nome.required' => 'O campo nome precisa ser preenchido'
       ]);
 
       $motivo_contatos = MotivoContato::all();
