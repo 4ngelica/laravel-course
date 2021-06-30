@@ -17,13 +17,9 @@ use App\Http\Middleware\LogAcessoMiddleware;
 
 //Definindo rotas (que apontam para vistas ou apenas para msgs de callback)
   //Vistas
-  Route::middleware(LogAcessoMiddleware::class)
-    ->get('/', 'PrincipalController@principal')
-    ->name("site.index");
+  Route::get('/', 'PrincipalController@principal')->name("site.index")->middleware('log.acesso');
   Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name("site.sobrenos");
-  Route::middleware(LogAcessoMiddleware::class)
-    ->get('/contato', 'ContatoController@contato')
-    ->name("site.contato");
+  Route::get('/contato', 'ContatoController@contato')->name("site.contato");
   Route::post('/contato', 'ContatoController@salvar')->name("site.salvar");
   Route::get('/login', function(){return "Login";})->name("site.login");
 
