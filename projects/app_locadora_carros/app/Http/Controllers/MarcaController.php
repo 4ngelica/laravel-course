@@ -14,7 +14,9 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        //
+      $marcas = Marca::all();
+      return $marcas;
+
     }
 
     /**
@@ -24,7 +26,7 @@ class MarcaController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -50,8 +52,7 @@ class MarcaController extends Controller
      */
     public function show(Marca $marca)
     {
-        //
-    }
+return $marca;    }
 
     /**
      * Show the form for editing the specified resource.
