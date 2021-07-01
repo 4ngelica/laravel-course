@@ -11,13 +11,14 @@ class CreateClientesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+     public function up()
+ {
+     Schema::create('clientes', function (Blueprint $table) {
+         $table->id();
+         $table->string('nome', 30);
+         $table->timestamps();
+     });
+ }
 
     /**
      * Reverse the migrations.
