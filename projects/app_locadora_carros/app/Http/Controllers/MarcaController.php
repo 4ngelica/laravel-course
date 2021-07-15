@@ -60,7 +60,7 @@ class MarcaController extends Controller
     public function show($id)
     {
 
-        $marca = $this->marca->find($id);
+        $marca = $this->marca->with('modelos')->find($id);
 
         if($marca ==null){
           return response()->json(['erro'=>'O recurso solicitado não existe.'], 404);
@@ -143,7 +143,7 @@ class MarcaController extends Controller
         }
 
           Storage::disk('public')->delete($marca->imagem);
-        
+
         $marca->delete();
         return response()->json(['msg' => 'A marca foi removida com sucesso.'], 200);
     }

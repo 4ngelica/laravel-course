@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Modelo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class ModeloController extends Controller
 {
@@ -38,7 +40,7 @@ class ModeloController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate($this->modelo->rules(), $this->modelo->feedback());
+      $request->validate($this->modelo->rules());
       $image = $request->file('imagem');
       $imagem_urn = $image->store('imagens/modelos','public');
 
@@ -66,7 +68,7 @@ class ModeloController extends Controller
      */
     public function show($id)
     {
-      $modelo = $this->modelo->find($id);
+      $modelo = $this->modelo->with('marca')->find($id);
 
       if($modelo ==null){
         return response()->json(['erro'=>'O recurso solicitado não existe.'], 404);
