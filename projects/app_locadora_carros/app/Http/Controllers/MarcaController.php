@@ -102,6 +102,7 @@ class MarcaController extends Controller
               $regrasDinamicas[$input] = $regra;
             }
           }
+          $request->validate($regrasDinamicas, $marca->feedback());
 
         }else{
           $request->validate($marca->rules(), $marca->feedback());
@@ -112,13 +113,13 @@ class MarcaController extends Controller
           Storage::disk('public')->delete($marca->imagem);
         }
 
-        $image = $request->file('imagem');
-        $imagem_urn = $image->store('imagens','public');
-
-        $marca = $this->marca->create([
-          'nome' => $request->nome,
-          'imagem' => $imagem_urn
-        ]);
+        $imagem = $request->file('imagem');
+        $imagem_urn = $imagem->store('imagens','public');
+        // 
+        // $marca = $this->marca->create([
+        //   'nome' => $request->nome,
+        //   'imagem' => $imagem_urn
+        // ]);
 
         $marca->fill($request->all());
         $marca->imagem = $imagem_urn;
