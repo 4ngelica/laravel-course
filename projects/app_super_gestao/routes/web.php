@@ -26,7 +26,7 @@ use App\Http\Middleware\LogAcessoMiddleware;
 
 
     //Agrupando e nomeando rotas
-    Route::middleware('log.acesso', 'autenticacao')->prefix('/app')->group(function(){
+    Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(function(){
       Route::get('/clientes', function(){return "Clientes";})->name("app.clientes");
       Route::get('/fornecedores', 'FornecedoresController@index')->name("app.fornecedores");
       Route::get('/produtos',function(){return "Produtos";})->name("app.produtos");
