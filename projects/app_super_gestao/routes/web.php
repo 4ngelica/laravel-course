@@ -27,9 +27,13 @@ use App\Http\Middleware\LogAcessoMiddleware;
 
     //Agrupando e nomeando rotas
     Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(function(){
-      Route::get('/clientes', function(){return "Clientes";})->name("app.clientes");
-      Route::get('/fornecedores', 'FornecedoresController@index')->name("app.fornecedores");
-      Route::get('/produtos',function(){return "Produtos";})->name("app.produtos");
+      Route::get('/home', 'HomeController@index')->name("app.home");
+      Route::get('/sair', 'LoginController@sair')->name("app.sair");
+      Route::get('/cliente', 'ClienteController@index')->name("app.cliente");
+      Route::get('/fornecedor', 'FornecedorController@index')->name("app.fornecedor");
+      Route::get('/fornecedor/listar', 'FornecedorController@listar')->name("app.fornecedor.listar");
+      Route::get('/fornecedor', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
+      Route::get('/produto', 'ProdutoController@index')->name("app.produto");
   });
 
   //Msgs de callback
