@@ -21,7 +21,9 @@ use App\Http\Middleware\LogAcessoMiddleware;
   Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name("site.sobrenos");
   Route::get('/contato', 'ContatoController@contato')->name("site.contato");
   Route::post('/contato', 'ContatoController@salvar')->name("site.salvar");
-  Route::get('/login', function(){return "Login";})->name("site.login");
+  Route::get('/login/{erro?}', 'LoginController@index')->name("site.login");
+  Route::post('/login', 'LoginController@autenticar')->name("site.login");
+
 
     //Agrupando e nomeando rotas
     Route::middleware('log.acesso', 'autenticacao')->prefix('/app')->group(function(){
