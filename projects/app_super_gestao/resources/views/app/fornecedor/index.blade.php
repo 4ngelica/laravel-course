@@ -7,14 +7,15 @@
     </div>
     <div class="menu">
       <u>
-        <li><a href="">Novo</a></li>
-        <li><a href="">Consulta</a></li>
+        <li><a href="{{route("app.fornecedor.adicionar")}}">Novo</a></li>
+        <li><a href="{{route("app.fornecedor")}}">Consulta</a></li>
       </u>
 
     </div>
     <div class="informacao-pagina">
       <div style="width:30%; margin-left:auto; margin-right:auto;">
-        <form class="" action="" method="post">
+        <form class="" action="{{route("app.fornecedor.listar")}}" method="post">
+          @csrf
           <input type="text" name="nome" placeholder="Nome" class="borda-preta">
           <input type="text" name="site" placeholder="Site" class="borda-preta">
           <input type="text" name="uf" placeholder="UF" class="borda-preta">
