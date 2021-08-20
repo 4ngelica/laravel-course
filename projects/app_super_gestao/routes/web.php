@@ -34,6 +34,7 @@ use App\Http\Middleware\LogAcessoMiddleware;
       Route::post('/fornecedor/listar', 'FornecedorController@listar')->name("app.fornecedor.listar");
       Route::get('/fornecedor/listar', 'FornecedorController@listar')->name("app.fornecedor.listar");
       Route::get('/fornecedor/adicionar', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
+      Route::post('/fornecedor/adicionar', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
       Route::get('/produto', 'ProdutoController@index')->name("app.produto");
   });
 
