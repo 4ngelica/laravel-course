@@ -36,6 +36,7 @@ use App\Http\Middleware\LogAcessoMiddleware;
       Route::get('/fornecedor/adicionar', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
       Route::post('/fornecedor/adicionar', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
       Route::get('/produto', 'ProdutoController@index')->name("app.produto");
+      Route::get('/fornecedor/editar/{id}/{msg?}', 'FornecedorController@editar')->name("app.fornecedor.editar");
   });
 
   //Msgs de callback
