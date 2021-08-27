@@ -7,14 +7,37 @@
     </div>
     <div class="menu">
       <u>
-        <li><a href="">Novo</a></li>
-        <li><a href="">Consulta</a></li>
+        <li><a href="{{route('app.fornecedor.adicionar')}}">Novo</a></li>
+        <li><a href="{{route('app.fornecedor')}}">Consulta</a></li>
       </u>
 
     </div>
     <div class="informacao-pagina">
-      <div style="width:30%; margin-left:auto; margin-right:auto;">
-        lista..
+      <div style="width:90%; margin-left:auto; margin-right:auto;">
+        <table border="1" width="100%">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Site</th>
+              <th>UF</th>
+              <th>Email</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($fornecedores as $fornecedor)
+              <tr>
+                <td>{{$fornecedor->nome}}</td>
+                <td>{{$fornecedor->site}}</td>
+                <td>{{$fornecedor->uf}}</td>
+                <td>{{$fornecedor->email}}</td>
+                <td>Excluir</td>
+                <td>Editar</td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
