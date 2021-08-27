@@ -39,6 +39,7 @@
           </tbody>
         </table>
         {{ $fornecedores->appends($request)->links()}}
+        Exibindo {{ $fornecedores->count() }} fornecedores de {{ $fornecedores->total() }}
       </div>
     </div>
   </div>
