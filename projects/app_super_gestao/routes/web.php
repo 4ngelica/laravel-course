@@ -40,7 +40,7 @@ use App\Http\Middleware\LogAcessoMiddleware;
       Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name("app.fornecedor.excluir");
 
       //Produto
-      Route::resource('produto', 'ProdutoController')->name("app.produto");
+      Route::resource('produto', 'ProdutoController');
   });
 
   //Msgs de callback
