@@ -15,13 +15,13 @@
     <div class="informacao-pagina">
       {{-- {{$msg ?? ''}} --}}
       <div style="width:30%; margin-left:auto; margin-right:auto;">
-        <form class="" action="" method="post">
+        <form class="" action="{{route('produto.store')}}" method="post">
           @csrf
           <input type="text" name="nome" placeholder="Nome" value="" class="borda-preta">
           {{-- {{ $errors->has('nome') ? $errors->first('nome') : ''}} --}}
-          <input type="text" name="descricao" placeholder="Site" value="" class="borda-preta">
+          <input type="text" name="descricao" placeholder="Descrição" value="" class="borda-preta">
           {{-- {{$errors->has('site') ? $errors->first('site'): ''}} --}}
-          <input type="text" name="peso" placeholder="UF" value="" class="borda-preta">
+          <input type="text" name="peso" placeholder="Peso" value="" class="borda-preta">
           {{-- {{$errors->has('uf') ? $errors->first('uf'): ''}} --}}
           <select class="borda-preta" name="unidade_id">
             <option value="">Selecione a unidade de medida</option>
