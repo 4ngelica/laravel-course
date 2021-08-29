@@ -39,6 +39,13 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+        $regras = [
+          'nome' => 'required|min:3|max:40',
+          'descricao' => 'required|min:3|max:2000',
+          'peso' => 'required|integer',
+          'unidade_id' => 'exists:unidades,id'
+        ];
+        $request->validate($regras);
         Produto::create($request->all());
         return redirect()->route('produto.index');
     }
