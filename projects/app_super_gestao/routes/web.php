@@ -43,7 +43,7 @@ use App\Http\Middleware\LogAcessoMiddleware;
       Route::resource('produto', 'ProdutoController');
 
       //Produtos detalhes
-      Route::resource('produto-detalhe', 'ProdutoDetalhesController');
+      Route::resource('produto-detalhe', 'ProdutoDetalheController');
   });
 
   //Msgs de callback
