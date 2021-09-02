@@ -10,8 +10,8 @@
         <li><a href="{{route('produto.create')}}">Novo</a></li>
         <li><a href="">Consulta</a></li>
       </u>
-
     </div>
+
     <div class="informacao-pagina">
       <div style="width:90%; margin-left:auto; margin-right:auto;">
         <table border="1" width="100%">
@@ -59,5 +59,4 @@
       </div>
     </div>
   </div>
-
 @endsection
