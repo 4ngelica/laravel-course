@@ -25,7 +25,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.cliente.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $regras = [
+            'nome' => 'required|min:3|max:40'
+        ];
+
+        $cliente = new Cliente;
+        $cliente->nome = $request->get('nome');
+        $cliente->save();
+
+        return redirect()->route('cliente.index');
     }
 
     /**
