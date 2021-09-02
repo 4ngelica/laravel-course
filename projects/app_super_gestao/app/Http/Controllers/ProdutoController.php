@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produto;
 use App\Unidade;
+use App\Fornecedor;
 use App\ProdutoDetalhe;
 
 
@@ -40,7 +41,8 @@ class ProdutoController extends Controller
     public function create()
     {
         $unidades = Unidade::all();
-        return view('app.produto.create', ['unidades'=>$unidades]);
+        $fornecedores = Fornecedor::all();
+        return view('app.produto.create', ['unidades'=>$unidades, 'fornecedores' =>$fornecedores]);
     }
 
     /**
@@ -55,7 +57,8 @@ class ProdutoController extends Controller
           'nome' => 'required|min:3|max:40',
           'descricao' => 'required|min:3|max:2000',
           'peso' => 'required|integer',
-          'unidade_id' => 'exists:unidades,id'
+          'unidade_id' => 'exists:unidades,id',
+          'fornecedor_id' => 'exists:fornecedores,id'
         ];
         $request->validate($regras);
         Produto::create($request->all());
@@ -81,8 +84,9 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
+        $fornecedores = Fornecedor::all();
         $unidades = Unidade::all();
-        return view('app.produto.edit', ['produto'=>$produto, 'unidades'=>$unidades]);
+        return view('app.produto.edit', ['produto'=>$produto, 'unidades'=>$unidades, 'fornecedores'=>$fornecedores]);
     }
 
     /**
@@ -94,6 +98,15 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
+        $regras = [
+          'nome' => 'required|min:3|max:40',
+          'descricao' => 'required|min:3|max:2000',
+          'peso' => 'required|integer',
+          'unidade_id' => 'exists:unidades,id',
+          'fornecedor_id' => 'exists:fornecedores,id'
+        ];
+
+        $request->validate($regras);
         $produto->update($request->all());
         return redirect()->route('produto.show', ['produto' => $produto->id]);
     }

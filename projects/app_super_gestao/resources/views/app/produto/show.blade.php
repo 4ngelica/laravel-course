@@ -13,7 +13,6 @@
 
     </div>
     <div class="informacao-pagina">
-      {{-- {{$msg ?? ''}} --}}
       <div style="width:30%; margin-left:auto; margin-right:auto;">
         <table border="1" style="text-align:left; margin: 0 auto;">
           <tr>
@@ -35,6 +34,10 @@
           <tr>
             <td>Unidade:</td>
             <td>{{$produto->unidade_id}}</td>
+          </tr>
+          <tr>
+            <td>Fornecedor:</td>
+            <td>{{$produto->fornecedor->nome}}</td>
           </tr>
         </table>
       </div>
