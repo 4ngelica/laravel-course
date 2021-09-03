@@ -46,7 +46,11 @@ use App\Http\Middleware\LogAcessoMiddleware;
 
       Route::resource('cliente', 'ClienteController');
       Route::resource('pedido', 'PedidoController');
-      Route::resource('pedido-produto', 'PedidoProdutoController');
+
+      //Route::resource('pedido-produto', 'PedidoProdutoController');
+      Route::get('pedido-produto/create/{pedido}', 'PedidoProdutoController@create')->name("pedido-produto.create");
+      Route::post('pedido-produto/store/{pedido}', 'PedidoProdutoController@store')->name("pedido-produto.store");
+
 
   });
 

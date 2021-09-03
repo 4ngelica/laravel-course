@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedido extends Model
 {
-    protected $table = 'pedidos_produtos';
+    protected $fillable = ['cliente_id'];
 }
