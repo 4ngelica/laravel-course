@@ -37755,15 +37755,19 @@ var staticRenderFns = [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }),
+            _c("div", { staticClass: "card-header" }, [_vm._v("Login")]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c("form", { attrs: { method: "POST", action: "" } }, [
                 _c("div", { staticClass: "form-group row" }, [
-                  _c("label", {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "email" }
-                  }),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-4 col-form-label text-md-right",
+                      attrs: { for: "email" }
+                    },
+                    [_vm._v("E-mail")]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("input", {
@@ -37782,10 +37786,14 @@ var staticRenderFns = [
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group row" }, [
-                  _c("label", {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "password" }
-                  }),
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-4 col-form-label text-md-right",
+                      attrs: { for: "password" }
+                    },
+                    [_vm._v("Password")]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c("input", {
@@ -37813,20 +37821,42 @@ var staticRenderFns = [
                         }
                       }),
                       _vm._v(" "),
-                      _c("label", {
-                        staticClass: "form-check-label",
-                        attrs: { for: "remember" }
-                      })
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: "remember" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                      Keep me logged in\n                                    "
+                          )
+                        ]
+                      )
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group row mb-0" }, [
                   _c("div", { staticClass: "col-md-8 offset-md-4" }, [
-                    _c("button", {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "submit" }
-                    })
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                  Login\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("a", { staticClass: "btn btn-link" }, [
+                      _vm._v(
+                        "\n                                Forgot my password\n                                "
+                      )
+                    ])
                   ])
                 ])
               ])
