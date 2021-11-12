@@ -33,7 +33,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                          @auth
+                            <li class="nav-item">
+                              <a href="#" class="nav-link">Cutomers</a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="#" class="nav-link">Rentals</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicles</a>
+                              <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Cars</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">Brands</a>
+                                <a href="#" class="dropdown-item">Models</a>
+                              </div>
+                            </li>
+                          @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
