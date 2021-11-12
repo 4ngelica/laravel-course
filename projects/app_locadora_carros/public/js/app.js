@@ -37939,7 +37939,68 @@ var staticRenderFns = [
             _c("div", { staticClass: "card-header" }, [_vm._v("Brands")]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _c("p", [_vm._v("Brand management")])
+              _c("div", { staticClass: "form-row" }, [
+                _c("div", { staticClass: " col form-group" }, [
+                  _c("label", { attrs: { for: "inputId" } }, [
+                    _vm._v("Brand searching")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "number",
+                      id: "inputId",
+                      "aria-describedby": "idHelp",
+                      placeholder: "ID"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "small",
+                    {
+                      staticClass: "form-text text-muted",
+                      attrs: { id: "idHelp" }
+                    },
+                    [_vm._v("Optional. Search by the brand ID.")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col form-group" }, [
+                  _c("label", { attrs: { for: "inputName" } }, [
+                    _vm._v("Name")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "inputName",
+                      "aria-describedby": "nameHelp",
+                      placeholder: "Name"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "small",
+                    {
+                      staticClass: "form-text text-muted",
+                      attrs: { id: "nameHelp" }
+                    },
+                    [_vm._v("Optional. Search by the brand name.")]
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn-sm float-right",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("Search")]
+              )
             ])
           ])
         ])
