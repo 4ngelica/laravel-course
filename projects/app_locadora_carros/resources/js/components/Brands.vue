@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="card">
+        <!-- Brand searching card -->
+        <div class="card mb-3">
           <div class="card-header">Brand searching</div>
           <div class="card-body">
             <div class="form-row">
@@ -22,6 +23,19 @@
             <button type="submit" class="btn btn-primary btn-sm float-right">Search</button>
           </div>
         </div>
+
+        <!-- Brand index -->
+        <div class="card">
+          <div class="card-header">Brands</div>
+          <div class="card-body">
+              <table-component></table-component>
+
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary btn-sm float-right">Add</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
