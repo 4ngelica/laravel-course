@@ -34,9 +34,26 @@
         </card-component>
       </div>
     </div>
-    <!-- Button trigger modal -->
-
+    
     <!-- Modal -->
-    <modal-component id="brandModal" title="Add brand"></modal-component>
+    <modal-component id="brandModal" title="Add brand">
+      <template v-slot:content>
+        <div class="form-group">
+          <input-container-component title="Brand name" id="newName" id-help="newNameHelp" help-text="Type the brand name.">
+            <input type="text" class="form-control" id="newName" aria-describedby="newNameHelp" placeholder="Brand">
+          </input-container-component>
+        </div>
+
+        <div class="form-group">
+          <input-container-component title="Image" id="newImage" id-help="newImageHelp" help-text="Upload the brand image (.png).">
+            <input type="file" class="form-control-file" id="newImage" aria-describedby="newImageHelp" placeholder="Upload image">
+          </input-container-component>
+        </div>
+      </template>
+      <template v-slot:footer>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </template>
+    </modal-component>
   </div>
 </template>

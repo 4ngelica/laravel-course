@@ -2276,7 +2276,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['id', 'title']
 });
@@ -38498,7 +38497,100 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("modal-component", { attrs: { id: "brandModal", title: "Add brand" } })
+      _c("modal-component", {
+        attrs: { id: "brandModal", title: "Add brand" },
+        scopedSlots: _vm._u([
+          {
+            key: "content",
+            fn: function() {
+              return [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c(
+                      "input-container-component",
+                      {
+                        attrs: {
+                          title: "Brand name",
+                          id: "newName",
+                          "id-help": "newNameHelp",
+                          "help-text": "Type the brand name."
+                        }
+                      },
+                      [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "newName",
+                            "aria-describedby": "newNameHelp",
+                            placeholder: "Brand"
+                          }
+                        })
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c(
+                      "input-container-component",
+                      {
+                        attrs: {
+                          title: "Image",
+                          id: "newImage",
+                          "id-help": "newImageHelp",
+                          "help-text": "Upload the brand image (.png)."
+                        }
+                      },
+                      [
+                        _c("input", {
+                          staticClass: "form-control-file",
+                          attrs: {
+                            type: "file",
+                            id: "newImage",
+                            "aria-describedby": "newImageHelp",
+                            placeholder: "Upload image"
+                          }
+                        })
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]
+            },
+            proxy: true
+          },
+          {
+            key: "footer",
+            fn: function() {
+              return [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Close")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "button" } },
+                  [_vm._v("Save changes")]
+                )
+              ]
+            },
+            proxy: true
+          }
+        ])
+      })
     ],
     1
   )
@@ -38909,11 +39001,9 @@ var render = function() {
             _vm._m(0)
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [
-            _vm._v("\n        ...\n      ")
-          ]),
+          _c("div", { staticClass: "modal-body" }, [_vm._t("content")], 2),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "modal-footer" }, [_vm._t("footer")], 2)
         ])
       ])
     ]
@@ -38936,27 +39026,6 @@ var staticRenderFns = [
       },
       [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Close")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
-        [_vm._v("Save changes")]
-      )
-    ])
   }
 ]
 render._withStripped = true
