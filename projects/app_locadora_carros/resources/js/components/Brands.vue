@@ -3,9 +3,8 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <!-- Brand searching card -->
-        <div class="card mb-3">
-          <div class="card-header">Brand searching</div>
-          <div class="card-body">
+        <card-component title="Brand searching">
+          <template v-slot:content>
             <div class="form-row">
               <div class="col">
                 <input-container-component title="ID" id="inputId" id-help="IdHelp" help-text="Optional. Search by the brand ID.">
@@ -18,24 +17,21 @@
                 </input-container-component>
               </div>
             </div>
-          </div>
-          <div class="card-footer">
+          </template>
+          <template>
             <button type="submit" class="btn btn-primary btn-sm float-right">Search</button>
-          </div>
-        </div>
+          </template>
+        </card-component>
 
-        <!-- Brand index -->
-        <div class="card">
-          <div class="card-header">Brands</div>
-          <div class="card-body">
-              <table-component></table-component>
-
-          </div>
-          <div class="card-footer">
+        <!-- Brand index card -->
+        <card-component title="Brands">
+          <template v-slot:content>
+            <table-component></table-component>
+          </template>
+          <template v-slot:footer>
             <button type="submit" class="btn btn-primary btn-sm float-right">Add</button>
-          </div>
-        </div>
-
+          </template>
+        </card-component>
       </div>
     </div>
   </div>
