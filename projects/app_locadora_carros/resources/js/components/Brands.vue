@@ -29,10 +29,14 @@
             <table-component></table-component>
           </template>
           <template v-slot:footer>
-            <button type="submit" class="btn btn-primary btn-sm float-right">Add</button>
+            <button type="submit" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#brandModal">Add</button>
           </template>
         </card-component>
       </div>
     </div>
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <modal-component id="brandModal" title="Add brand"></modal-component>
   </div>
 </template>
