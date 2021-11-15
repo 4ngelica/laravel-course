@@ -59,7 +59,7 @@ class MarcaController extends Controller
         'imagem' => $imagem_urn
       ]);
 
-      $marca = $this->marca->create($request->all());
+      // $marca = $this->marca->create($request->all());
       return response()->json($marca, 201);
 
     }

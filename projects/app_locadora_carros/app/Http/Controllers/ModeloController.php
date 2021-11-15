@@ -72,7 +72,6 @@ class ModeloController extends Controller
 
       ]);
 
-      $modelo = $this->modelo->create($request->all());
       return response()->json($modelo, 201);
     }
 
