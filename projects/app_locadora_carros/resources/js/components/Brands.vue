@@ -34,26 +34,65 @@
         </card-component>
       </div>
     </div>
-    
+
     <!-- Modal -->
     <modal-component id="brandModal" title="Add brand">
       <template v-slot:content>
         <div class="form-group">
           <input-container-component title="Brand name" id="newName" id-help="newNameHelp" help-text="Type the brand name.">
-            <input type="text" class="form-control" id="newName" aria-describedby="newNameHelp" placeholder="Brand">
+            <input type="text" class="form-control" id="newName" aria-describedby="newNameHelp" placeholder="Brand" v-model="brandName">
           </input-container-component>
         </div>
 
         <div class="form-group">
           <input-container-component title="Image" id="newImage" id-help="newImageHelp" help-text="Upload the brand image (.png).">
-            <input type="file" class="form-control-file" id="newImage" aria-describedby="newImageHelp" placeholder="Upload image">
+            <input type="file" class="form-control-file" id="newImage" aria-describedby="newImageHelp" placeholder="Upload image" @change="loadImage($event)">
           </input-container-component>
         </div>
       </template>
       <template v-slot:footer>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" @click="save()">Save changes</button>
       </template>
     </modal-component>
   </div>
 </template>
+
+<script>
+  export default {
+    data(){
+      return{
+        baseUrl: 'http://localhost:8000/api/marca',
+        brandName: '',
+        imageFile: []
+      }
+    },
+    methods:{
+      loadImage(e){
+        this.imageFile = e.target.files;
+      },
+      save(){
+
+        let formData = new FormData();
+        formData.append('nome', this.brandName);
+        formData.append('imagem', this.imageFile[0]);
+
+        let config = {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Accept': 'application/json'
+          }
+        }
+
+        axios.post(this.baseUrl, formData, config )
+          .then(response => {
+            console.log(response)
+          })
+          .catch(errors => {
+            console.log(errors)
+          })
+      }
+    }
+  }
+
+</script>
