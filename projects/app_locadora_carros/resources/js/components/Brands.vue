@@ -37,12 +37,16 @@
 
     <!-- Modal -->
     <modal-component id="brandModal" title="Add brand">
-      <template v-slot:content>
-        <div class="form-group">
-          <input-container-component title="Brand name" id="newName" id-help="newNameHelp" help-text="Type the brand name.">
-            <input type="text" class="form-control" id="newName" aria-describedby="newNameHelp" placeholder="Brand" v-model="brandName">
-          </input-container-component>
-        </div>
+        <template v-slot:alert>
+            <alert-component type="success"></alert-component>
+            <alert-component type="danger"></alert-component>
+        </template>
+        <template v-slot:content>
+            <div class="form-group">
+              <input-container-component title="Brand name" id="newName" id-help="newNameHelp" help-text="Type the brand name.">
+                <input type="text" class="form-control" id="newName" aria-describedby="newNameHelp" placeholder="Brand" v-model="brandName">
+              </input-container-component>
+            </div>
 
         <div class="form-group">
           <input-container-component title="Image" id="newImage" id-help="newImageHelp" help-text="Upload the brand image (.png).">
